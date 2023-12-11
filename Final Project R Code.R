@@ -28,9 +28,6 @@ ggplot(cd_demo_clean, aes(x = clean_unemployment_rate, y = people_per_ramp)) +
     breaks = seq(min(clean_unemployment_rate), max(clean_unemployment_rate), by = 0.05),
     labels = percent_format()
   )
-##theme(
-  ##panel.background = element_rect(fill = "light blue")  # Change the background color
-##)
 
 
 # Correlation scatter plot for median_household_income
@@ -45,8 +42,6 @@ ggplot(cd_demo_clean, aes(x = median_household_income_dollars, y = people_per_ra
     y = "People per Ramp"
   )
 
-# Assuming cd_demo_clean contains the necessary columns like 'median_age' and 'people_per_ramp'
-
 # Plot with a trend line
 ggplot(cd_demo_clean, aes(x = median_age, y = people_per_ramp)) +
   geom_point() +
@@ -56,8 +51,6 @@ ggplot(cd_demo_clean, aes(x = median_age, y = people_per_ramp)) +
     x = "Median Age",
     y = "People per Ramp"
   )
-
-# Assuming cd_demo_clean contains the necessary columns like 'population_with_ged_or_higher' and 'people_per_ramp'
 
 # Plot with a trend line
 ggplot(cd_demo_clean, aes(x = population_with_ged_or_higher, y = people_per_ramp)) +
