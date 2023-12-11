@@ -1,5 +1,5 @@
 # Final-Project
-Final Project for Data Vis
+#Final Project for Data Vis
 library(tidyverse)
 library(janitor)
 library(ggplot2)
@@ -11,6 +11,7 @@ cd_demo_clean <- clean_names (cd_demo)
 
 
 # Creating scatterplots to analyze if there are correlations between demographics and people per ramp
+
 # unemployment rate
 # Clean the unemployment_rate column since it's in percentage format
 clean_unemployment_rate <- as.numeric(gsub("%", "", cd_demo_clean$unemployment_rate))
@@ -35,8 +36,7 @@ ggplot(cd_demo_clean, aes(x = clean_unemployment_rate, y = people_per_ramp)) +
 ##)
 
 
-# Correlation scatter plot for median_household_income
-# Plot with a trend line
+# median_household_income
 ggplot(cd_demo_clean, aes(x = median_household_income_dollars, y = people_per_ramp)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +  # Add a linear trend line without confidence interval
@@ -47,9 +47,7 @@ ggplot(cd_demo_clean, aes(x = median_household_income_dollars, y = people_per_ra
     y = "People per Ramp"
   )
 
-# Assuming cd_demo_clean contains the necessary columns like 'median_age' and 'people_per_ramp'
-
-# Plot with a trend line
+# median_age
 ggplot(cd_demo_clean, aes(x = median_age, y = people_per_ramp)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +  # Add a linear trend line without confidence interval
@@ -59,9 +57,9 @@ ggplot(cd_demo_clean, aes(x = median_age, y = people_per_ramp)) +
     y = "People per Ramp"
   )
 
-# Assuming cd_demo_clean contains the necessary columns like 'population_with_ged_or_higher' and 'people_per_ramp'
 
-# Plot with a trend line
+
+# Education
 ggplot(cd_demo_clean, aes(x = population_with_ged_or_higher, y = people_per_ramp)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE) +  # Add a linear trend line without confidence interval
